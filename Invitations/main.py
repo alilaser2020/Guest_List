@@ -48,17 +48,12 @@ if __name__ == "__main__":
     print(invitations)
     print(f"Sorry everyone, I can invite only two people {invitations[1].title()} and {invitations[3].title()} "
           f"for dinner")
-    s1 = invitations[1]
-    s2 = invitations[3]
     for i in range(len(invitations)):
-        p = invitations.pop(0)
-        if p == s1 or p == s2:
-            print(f"*Welcome {p.title()}, you’re still invited to dinner*")
+        if invitations[i] == invitations[1] or invitations[i] == invitations[3]:
+            print(f"*Welcome {invitations[i].title()}, you’re still invited to dinner*")
         else:
-            print(f"I'm sorry {p.title()} that I can’t invite you to dinner!")
+            print(f"I'm sorry {invitations[i].title()} that I can’t invite you to dinner!")
 
-    # print(f"invitations = {invitations}")
-    # for x in invitations:
-    #     del x
-    #
-    # print(invitations)
+    print(f"Full invitations = {invitations}")
+    invitations.clear()
+    print(f"Empty invitations = {invitations}")
